@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!-- Instructor page — same idea as the trainee index.html, but loads the
+     answer key for all 5 exercises, in order. -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events Playground — SOLUTION</title>
+</head>
+<body>
+    <h2>Exercise 1 — Event Handler</h2>
+    <button id="btn-inline" onclick="handleInlineClick()">Inline Click</button>
+    <p id="inline-result">not clicked</p>
+    <button id="btn-property">Property Click</button>
+    <p id="property-result">not clicked</p>
+
+    <h2>Exercise 2 — Event Listener</h2>
+    <button id="btn-multi">Multi</button>
+    <p id="multi-log"></p>
+    <button id="btn-remove">Remove</button>
+    <p id="remove-log">not clicked</p>
+
+    <h2>Exercise 3 — The Event Object</h2>
+    <div id="ex3-box">Click Me Box</div>
+    <p id="ex3-type"></p>
+
+    <h2>Exercise 4 — Event Delegation</h2>
+    <ul id="ex4-list">
+        <li data-fruit="apple">Apple</li>
+        <li data-fruit="banana">Banana</li>
+        <li data-fruit="cherry">Cherry</li>
+    </ul>
+    <p id="ex4-result">none selected</p>
+
+    <h2>Exercise 5 — stopPropagation</h2>
+    <div id="ex5-outer">
+        Outer
+        <button id="ex5-inner">Inner Button</button>
+    </div>
+    <p id="ex5-outer-log">outer not triggered</p>
+    <p id="ex5-inner-log">inner not triggered</p>
+
+    <script src="solutions/exercise1.js"></script>
+    <script src="solutions/exercise2.js"></script>
+    <script src="solutions/exercise3.js"></script>
+    <script src="solutions/exercise4.js"></script>
+    <script src="solutions/exercise5.js"></script>
+</body>
+</html>
