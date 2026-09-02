@@ -16,19 +16,26 @@
         lives in <code>../option-b-memory-match/</code>.)
     </p>
     <p>Open with Live Server, then press <strong>F12</strong> for the console.
-       A prompt will ask which mode to play when the page loads.</p>
+       Choose a mode below to start.</p>
 
-    <p id="status">Loading...</p>
-    <div id="board">
-        <div class="cell" data-index="0"></div>
-        <div class="cell" data-index="1"></div>
-        <div class="cell" data-index="2"></div>
-        <div class="cell" data-index="3"></div>
-        <div class="cell" data-index="4"></div>
-        <div class="cell" data-index="5"></div>
-        <div class="cell" data-index="6"></div>
-        <div class="cell" data-index="7"></div>
-        <div class="cell" data-index="8"></div>
+    <div id="mode-select">
+        <button id="mode-1p" class="action-btn">1 Player (vs Computer)</button>
+        <button id="mode-2p" class="action-btn">2 Player</button>
+    </div>
+
+    <div id="game-area" class="hidden">
+        <p id="status">Loading...</p>
+        <div id="board">
+            <div class="cell" data-index="0"></div>
+            <div class="cell" data-index="1"></div>
+            <div class="cell" data-index="2"></div>
+            <div class="cell" data-index="3"></div>
+            <div class="cell" data-index="4"></div>
+            <div class="cell" data-index="5"></div>
+            <div class="cell" data-index="6"></div>
+            <div class="cell" data-index="7"></div>
+            <div class="cell" data-index="8"></div>
+        </div>
     </div>
 
     <!-- YOUR WORK: complete the TODOs in assignment.js -->

@@ -15,11 +15,21 @@ const boardState = ["", "", "", "", "", "", "", "", ""];
 
 let currentPlayer = "X";
 let gameOver = false;
+let vsComputer = false;
 
-const modeInput = prompt("Enter 1 for 1-Player (vs Computer) or 2 for 2-Player:");
-const vsComputer = modeInput === "1";
+document.getElementById("mode-1p").addEventListener("click", function () {
+    startGame(true);
+});
+document.getElementById("mode-2p").addEventListener("click", function () {
+    startGame(false);
+});
 
-statusEl.textContent = "Player X's turn";
+function startGame(isVsComputer) {
+    vsComputer = isVsComputer;
+    document.getElementById("mode-select").classList.add("hidden");
+    document.getElementById("game-area").classList.remove("hidden");
+    statusEl.textContent = "Player X's turn";
+}
 
 function checkWinner(board) {
     for (let i = 0; i < WINNING_LINES.length; i++) {

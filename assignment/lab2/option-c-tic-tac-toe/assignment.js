@@ -1,9 +1,9 @@
 /* ================================================================
    JavaScript — Week 5 — Lab 2 (Option C) · Tic-Tac-Toe
    ----------------------------------------------------------------
-   1-Player (vs a simple computer) or 2-Player, chosen by prompt()
-   when the page loads. ONE delegated click listener on #board runs
-   the whole game — no per-cell listeners.
+   1-Player (vs a simple computer) or 2-Player — pick one with the
+   mode buttons. ONE delegated click listener on #board runs the
+   whole game — no per-cell listeners.
 
    The computer (1P mode) is intentionally simple: it just plays
    the first empty cell. No delay/animation — its move happens
@@ -27,11 +27,21 @@ const boardState = ["", "", "", "", "", "", "", "", ""];
 
 let currentPlayer = "X";
 let gameOver = false;
+let vsComputer = false;
 
-const modeInput = prompt("Enter 1 for 1-Player (vs Computer) or 2 for 2-Player:");
-const vsComputer = modeInput === "1";
+document.getElementById("mode-1p").addEventListener("click", function () {
+    startGame(true);
+});
+document.getElementById("mode-2p").addEventListener("click", function () {
+    startGame(false);
+});
 
-statusEl.textContent = "Player X's turn";
+function startGame(isVsComputer) {
+    vsComputer = isVsComputer;
+    document.getElementById("mode-select").classList.add("hidden");
+    document.getElementById("game-area").classList.remove("hidden");
+    statusEl.textContent = "Player X's turn";
+}
 /* ---- END PROVIDED ------------------------------------------------- */
 
 
