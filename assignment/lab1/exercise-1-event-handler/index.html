@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 1 — Event Handler · Week 5 Lab 1</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- ============================================================
+         PROVIDED — do not edit this markup or the CSS.
+         Open with Live Server, then press F12 for the console.
+    ============================================================= -->
+    <header class="lab-header">
+        <p class="eyebrow">Week 5 · Lab 1</p>
+        <div class="exercise-pill">
+            <span class="exercise-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M6 3l9 8.2-4 .9 2.1 4.4-2.1.9-2.1-4.4-3 2.7Z" fill="currentColor"/>
+                    <path d="M17 2.5l1 1.4M20.5 6l1.7.4M19 9.5l1.2 1.4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+                </svg>
+            </span>
+            <h1>Exercise 1<span>Event Handler</span></h1>
+        </div>
+    </header>
+
+    <div class="event-card">
+        <p class="card-caption">Two ways to attach a handler to a click — one in HTML, one in JavaScript.</p>
+        <div class="handler-pair">
+            <div class="handler-panel">
+                <span class="panel-label">HTML attribute</span>
+                <button id="btn-inline" class="demo-btn" onclick="handleInlineClick()">Inline Click</button>
+                <p id="inline-result" class="result-chip">not clicked</p>
+            </div>
+            <div class="handler-panel">
+                <span class="panel-label">JS property</span>
+                <button id="btn-property" class="demo-btn">Property Click</button>
+                <p id="property-result" class="result-chip">not clicked</p>
+            </div>
+        </div>
+    </div>
+
+    <p class="console-hint">Your output prints to the browser console — press <kbd>F12</kbd> and open the <strong>Console</strong> tab.</p>
+
+    <!-- YOUR WORK: complete the TODOs in exercise1.js -->
+    <script src="exercise1.js"></script>
+</body>
+</html>

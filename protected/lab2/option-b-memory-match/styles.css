@@ -1,37 +1,196 @@
+/* ===================================================================
+   Week 5 · Lab 2 · Option B — Memory Match
+   PROVIDED — do not edit. Shares the same design tokens as Lab 1.
+=================================================================== */
+
+:root {
+    --color-primary: #2F6FED;
+    --color-primary-dark: #2D4E8E;
+    --color-primary-tint: #EAF1FE;
+    --color-success-tint: #D1FAE5;
+    --color-success-text: #067A55;
+    --color-neutral-50: #F9FAFB;
+    --color-neutral-100: #F3F4F6;
+    --color-neutral-200: #E5E7EB;
+    --color-neutral-300: #D1D5DB;
+    --color-neutral-500: #6B7280;
+    --color-neutral-700: #374151;
+    --color-neutral-900: #111827;
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-lg: 18px;
+    --radius-full: 9999px;
+    --shadow-card: 0 1px 3px rgba(17, 24, 39, 0.08), 0 12px 28px rgba(17, 24, 39, 0.08);
+    --font-sans: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-mono: Consolas, "Courier New", monospace;
+    --transition: 200ms ease;
+}
+
+* {
+    box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    max-width: 400px;
-    margin: 40px auto;
-    padding: 0 16px;
+    margin: 0;
+    min-height: 100vh;
+    font-family: var(--font-sans);
+    background: var(--color-neutral-50);
+    color: var(--color-neutral-900);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 40px 16px 56px;
+}
+
+/* ---- Lab header ---- */
+.lab-header {
+    width: 100%;
+    max-width: 420px;
     text-align: center;
+}
+
+.eyebrow {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-neutral-500);
+    margin: 0 0 10px;
+}
+
+.exercise-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #ffffff;
+    border: 1px solid var(--color-neutral-200);
+    border-radius: var(--radius-full);
+    padding: 8px 18px 8px 10px;
+    box-shadow: var(--shadow-card);
+}
+
+.exercise-icon {
+    display: grid;
+    place-items: center;
+    width: 28px;
+    height: 28px;
+    border-radius: var(--radius-full);
+    background: var(--color-primary-tint);
+    color: var(--color-primary);
+    flex-shrink: 0;
+}
+
+.exercise-icon svg {
+    width: 16px;
+    height: 16px;
+}
+
+.exercise-pill h1 {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0;
+    color: var(--color-neutral-900);
+    text-align: left;
+    line-height: 1.35;
+}
+
+.exercise-pill h1 span {
+    display: block;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--color-neutral-500);
+}
+
+.how-it-works {
+    max-width: 420px;
+    width: 100%;
+    background: var(--color-primary-tint);
+    color: var(--color-primary-dark);
+    border-radius: var(--radius-md);
+    padding: 10px 16px;
+    font-size: 12.5px;
+    text-align: center;
+    line-height: 1.55;
+}
+
+/* ---- Game card ---- */
+.game-card {
+    background: #ffffff;
+    border: 1px solid var(--color-neutral-200);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
+    padding: 20px;
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+}
+
+.status-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+#status {
+    margin: 0;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--color-neutral-700);
+}
+
+#moves {
+    margin: 0;
+    padding: 4px 12px;
+    border-radius: var(--radius-full);
+    background: var(--color-neutral-100);
+    color: var(--color-neutral-500);
+    font-family: var(--font-mono);
+    font-size: 12px;
 }
 
 #board {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 8px;
-    margin: 20px 0;
 }
 
 .card {
     aspect-ratio: 1 / 1;
-    background: #4a5568;
-    border-radius: 8px;
+    background: var(--color-primary);
+    background-image: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+    border-radius: var(--radius-md);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 20px;
-    color: #fff;
     cursor: pointer;
     user-select: none;
+    transition: transform 0.15s ease, background 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-1px);
 }
 
 .card.flipped {
-    background: #edf2f7;
-    color: #1a202c;
+    background: var(--color-neutral-100);
+    background-image: none;
 }
 
 .card.matched {
-    background: #c6f6d5;
-    color: #22543d;
+    background: var(--color-success-tint);
+    background-image: none;
+}
+
+.card svg {
+    width: 55%;
+    height: 55%;
+}
+
+/* The click handler checks event.target.classList directly — an
+   icon drawn inside a flipped card must never intercept the click,
+   or clicking it would look like clicking nothing at all. */
+.card * {
+    pointer-events: none;
 }

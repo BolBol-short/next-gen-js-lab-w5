@@ -2,7 +2,7 @@
    JavaScript — Week 5 — Lab 2 (Option B) · Memory Match
    ----------------------------------------------------------------
    6 pairs (12 cards) shuffled into a grid. Click two cards to flip
-   them; if the values match, they stay revealed. No timers here —
+   them; if the icons match, they stay revealed. No timers here —
    if two flipped cards DON'T match, they stay showing until your
    NEXT click, which flips them back before doing anything else.
    That keeps this project to only what you've learned so far
@@ -25,6 +25,18 @@ function shuffle(array) {
     return array;
 }
 
+/* Each card VALUE (1-6) maps to a small SVG icon string — the game
+   logic only ever compares dataset.value, exactly like plain
+   numbers would; this just decides what gets drawn on the card. */
+const CARD_ICONS = {
+    1: '<svg viewBox="0 0 24 24"><path d="M12 2.5 14.7 9l7 .6-5.3 4.6 1.6 6.8L12 17.5l-6 3.5 1.6-6.8L2.3 9.6l7-.6Z" fill="#F59E0B"/></svg>',
+    2: '<svg viewBox="0 0 24 24"><path d="M12 20.5 3.9 13a5 5 0 0 1 7.1-7l1 1 1-1a5 5 0 0 1 7.1 7Z" fill="#EF4444"/></svg>',
+    3: '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="#2F6FED"/></svg>',
+    4: '<svg viewBox="0 0 24 24"><path d="M12 3 21 20H3Z" fill="#10B981"/></svg>',
+    5: '<svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3" fill="#8B5CF6"/></svg>',
+    6: '<svg viewBox="0 0 24 24"><path d="M12 2.5 20.5 12 12 21.5 3.5 12Z" fill="#06B6D4"/></svg>',
+};
+
 const cardValues = shuffle([1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6]);
 
 const boardEl = document.getElementById("board");
@@ -45,7 +57,7 @@ let matchedPairs = 0;
      - set its data-value attribute to that value (element.dataset.value = value,
        or setAttribute("data-value", value))
      - append it to boardEl
-   Leave its textContent EMPTY for now — cards start face-down.
+   Leave its innerHTML EMPTY for now — cards start face-down.
    ================================================================= */
 
 
@@ -59,12 +71,12 @@ let matchedPairs = 0;
      3. If flippedCards.length === 2 already (an unresolved MISMATCHED
         pair is sitting there from last click): flip both of those
         back down first — remove class "flipped", clear their
-        textContent — then empty the flippedCards array.
+        innerHTML — then empty the flippedCards array.
      4. If the clicked card is already flipped (classList contains
         "flipped"), return (ignore double-click on the same card).
      5. Flip the clicked card face-up: add class "flipped", set its
-        textContent to its own dataset.value, push it onto
-        flippedCards.
+        innerHTML to CARD_ICONS[dataset.value] (the PROVIDED lookup
+        table above), push it onto flippedCards.
      6. If flippedCards now has 2 cards:
           - moves++ and update movesEl's textContent to "Moves: " + moves
           - if flippedCards[0].dataset.value === flippedCards[1].dataset.value:

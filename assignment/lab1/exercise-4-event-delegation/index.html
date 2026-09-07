@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 4 — Event Delegation · Week 5 Lab 1</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- ============================================================
+         PROVIDED — do not edit this markup or the CSS.
+         Open with Live Server, then press F12 for the console.
+    ============================================================= -->
+    <header class="lab-header">
+        <p class="eyebrow">Week 5 · Lab 1</p>
+        <div class="exercise-pill">
+            <span class="exercise-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                    <rect x="3" y="14" width="6" height="6" rx="1.3" stroke="currentColor" stroke-width="1.6"/>
+                    <rect x="9.5" y="14" width="6" height="6" rx="1.3" stroke="currentColor" stroke-width="1.6" opacity="0.45"/>
+                    <rect x="16" y="14" width="6" height="6" rx="1.3" stroke="currentColor" stroke-width="1.6" opacity="0.45"/>
+                    <rect x="3" y="3" width="19" height="7" rx="1.6" stroke="currentColor" stroke-width="1.6"/>
+                    <path d="M6 14v-1.5a1 1 0 0 1 1-1h9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M13.2 9.7 16 11.5l-2.8 1.8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </span>
+            <h1>Exercise 4<span>Event Delegation</span></h1>
+        </div>
+    </header>
+
+    <div class="event-card">
+        <p class="card-caption">ONE listener on the list, not three — figure out which item was clicked.</p>
+        <ul id="ex4-list">
+            <li data-fruit="apple">Apple</li>
+            <li data-fruit="banana">Banana</li>
+            <li data-fruit="cherry">Cherry</li>
+        </ul>
+        <p id="ex4-result" class="result-chip">none selected</p>
+    </div>
+
+    <p class="console-hint">Your output prints to the browser console — press <kbd>F12</kbd> and open the <strong>Console</strong> tab.</p>
+
+    <!-- YOUR WORK: complete the TODOs in exercise4.js -->
+    <script src="exercise4.js"></script>
+</body>
+</html>

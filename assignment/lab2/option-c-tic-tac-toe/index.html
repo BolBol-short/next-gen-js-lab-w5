@@ -7,34 +7,49 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Tic-Tac-Toe</h1>
-    <p>
-        Pick <strong>ONE</strong> of the three Lab 2 projects to complete.
-        This is <strong>Option C: Tic-Tac-Toe</strong> (1-player vs. computer,
-        or 2-player). (Option A — Rock Paper Scissors — lives in
-        <code>../option-a-rock-paper-scissors/</code>. Option B — Memory Match —
-        lives in <code>../option-b-memory-match/</code>.)
+    <!-- ============================================================
+         PROVIDED — do not edit this markup or the CSS.
+         Open with Live Server, then press F12 for the console.
+    ============================================================= -->
+    <header class="lab-header">
+        <p class="eyebrow">Week 5 · Lab 2 · Option C</p>
+        <div class="exercise-pill">
+            <span class="exercise-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                    <line x1="8" y1="3" x2="8" y2="21" stroke="currentColor" stroke-width="1.5"/>
+                    <line x1="16" y1="3" x2="16" y2="21" stroke="currentColor" stroke-width="1.5"/>
+                    <line x1="3" y1="8" x2="21" y2="8" stroke="currentColor" stroke-width="1.5"/>
+                    <line x1="3" y1="16" x2="21" y2="16" stroke="currentColor" stroke-width="1.5"/>
+                </svg>
+            </span>
+            <h1>Tic-Tac-Toe<span>Event delegation</span></h1>
+        </div>
+    </header>
+
+    <p class="how-it-works">
+        1-Player (vs. a simple computer) or 2-Player. ONE delegated
+        click listener on the board runs the whole game.
     </p>
-    <p>Open with Live Server, then press <strong>F12</strong> for the console.
-       Choose a mode below to start.</p>
 
-    <div id="mode-select">
-        <button id="mode-1p" class="action-btn">1 Player (vs Computer)</button>
-        <button id="mode-2p" class="action-btn">2 Player</button>
-    </div>
+    <div class="game-card">
+        <div id="mode-select">
+            <button id="mode-1p" class="action-btn">1 Player (vs Computer)</button>
+            <button id="mode-2p" class="action-btn">2 Player</button>
+        </div>
 
-    <div id="game-area" class="hidden">
-        <p id="status">Loading...</p>
-        <div id="board">
-            <div class="cell" data-index="0"></div>
-            <div class="cell" data-index="1"></div>
-            <div class="cell" data-index="2"></div>
-            <div class="cell" data-index="3"></div>
-            <div class="cell" data-index="4"></div>
-            <div class="cell" data-index="5"></div>
-            <div class="cell" data-index="6"></div>
-            <div class="cell" data-index="7"></div>
-            <div class="cell" data-index="8"></div>
+        <div id="game-area" class="hidden">
+            <p id="status">Loading...</p>
+            <div id="board">
+                <div class="cell" data-index="0"></div>
+                <div class="cell" data-index="1"></div>
+                <div class="cell" data-index="2"></div>
+                <div class="cell" data-index="3"></div>
+                <div class="cell" data-index="4"></div>
+                <div class="cell" data-index="5"></div>
+                <div class="cell" data-index="6"></div>
+                <div class="cell" data-index="7"></div>
+                <div class="cell" data-index="8"></div>
+            </div>
         </div>
     </div>
 

@@ -1,0 +1,176 @@
+/* ===================================================================
+   Week 5 · Lab 1 — Events Playground
+   Shared look across all 5 exercises. PROVIDED — do not edit.
+=================================================================== */
+
+:root {
+    --color-primary: #2F6FED;
+    --color-primary-dark: #2D4E8E;
+    --color-primary-tint: #EAF1FE;
+    --color-success-tint: #D1FAE5;
+    --color-success-text: #067A55;
+    --color-neutral-50: #F9FAFB;
+    --color-neutral-100: #F3F4F6;
+    --color-neutral-200: #E5E7EB;
+    --color-neutral-300: #D1D5DB;
+    --color-neutral-500: #6B7280;
+    --color-neutral-700: #374151;
+    --color-neutral-900: #111827;
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-lg: 18px;
+    --radius-full: 9999px;
+    --shadow-card: 0 1px 3px rgba(17, 24, 39, 0.08), 0 12px 28px rgba(17, 24, 39, 0.08);
+    --font-sans: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-mono: Consolas, "Courier New", monospace;
+    --transition: 200ms ease;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: var(--font-sans);
+    background: var(--color-neutral-50);
+    color: var(--color-neutral-900);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 40px 16px 56px;
+}
+
+/* ---- Lab header: orientation chrome, identical on every exercise page ---- */
+.lab-header {
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.eyebrow {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-neutral-500);
+    margin: 0 0 10px;
+}
+
+.exercise-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #ffffff;
+    border: 1px solid var(--color-neutral-200);
+    border-radius: var(--radius-full);
+    padding: 8px 18px 8px 10px;
+    box-shadow: var(--shadow-card);
+}
+
+.exercise-icon {
+    display: grid;
+    place-items: center;
+    width: 28px;
+    height: 28px;
+    border-radius: var(--radius-full);
+    background: var(--color-primary-tint);
+    color: var(--color-primary);
+    flex-shrink: 0;
+}
+
+.exercise-icon svg {
+    width: 16px;
+    height: 16px;
+}
+
+.exercise-pill h1 {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0;
+    color: var(--color-neutral-900);
+    text-align: left;
+    line-height: 1.35;
+}
+
+.exercise-pill h1 span {
+    display: block;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--color-neutral-500);
+}
+
+/* ---- Event card: shared shell every exercise's demo sits inside ---- */
+.event-card {
+    background: #ffffff;
+    border: 1px solid var(--color-neutral-200);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
+    padding: 24px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.event-card .card-caption {
+    font-size: 12.5px;
+    color: var(--color-neutral-500);
+    margin: 0 0 18px;
+    line-height: 1.5;
+}
+
+.result-chip {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 6px 14px;
+    border-radius: var(--radius-full);
+    background: var(--color-neutral-100);
+    color: var(--color-neutral-700);
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+}
+
+/* ---- Beginner-friendly reminder, identical on every page ---- */
+.console-hint {
+    max-width: 400px;
+    width: 100%;
+    background: var(--color-primary-tint);
+    color: var(--color-primary-dark);
+    border-radius: var(--radius-md);
+    padding: 10px 14px;
+    font-size: 12.5px;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.console-hint kbd {
+    background: #ffffff;
+    border: 1px solid var(--color-neutral-200);
+    border-radius: 4px;
+    padding: 1px 6px;
+    font-family: inherit;
+    font-size: 11.5px;
+}
+
+/* ---- Exercise 3 specific: one big clickable box ---- */
+#ex3-box {
+    background: var(--color-primary-tint);
+    color: var(--color-primary-dark);
+    border: 2px dashed var(--color-primary);
+    border-radius: var(--radius-md);
+    padding: 28px 16px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background var(--transition), transform 0.1s ease;
+}
+
+#ex3-box:hover {
+    background: #dde9fd;
+}
+
+#ex3-box:active {
+    transform: scale(0.98);
+}

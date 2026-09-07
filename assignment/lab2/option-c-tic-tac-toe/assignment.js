@@ -21,6 +21,14 @@ const WINNING_LINES = [
     [0, 4, 8], [2, 4, 6],              // diagonals
 ];
 
+/* Maps each mark ("X" or "O") to a small SVG icon string — the game
+   logic still only ever compares the plain "X"/"O" strings, exactly
+   like before; this just decides what gets drawn in the cell. */
+const MARK_ICONS = {
+    X: '<svg viewBox="0 0 24 24"><line x1="4.5" y1="4.5" x2="19.5" y2="19.5" stroke="#2F6FED" stroke-width="3" stroke-linecap="round"/><line x1="19.5" y1="4.5" x2="4.5" y2="19.5" stroke="#2F6FED" stroke-width="3" stroke-linecap="round"/></svg>',
+    O: '<svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="7.7" stroke="#F59E0B" stroke-width="3"/></svg>',
+};
+
 const cells = document.querySelectorAll(".cell");
 const statusEl = document.getElementById("status");
 const boardState = ["", "", "", "", "", "", "", "", ""];
@@ -74,7 +82,8 @@ function computerMove(board) {
    YOUR CODE — Part C: playMove(index, player)
 
    - Set boardState[index] = player.
-   - Set cells[index]'s textContent = player.
+   - Set cells[index]'s innerHTML = MARK_ICONS[player] (the PROVIDED
+     lookup table above — draws the X/O icon instead of plain text).
    - winner = checkWinner(boardState)
    - if winner: gameOver = true; statusEl.textContent =
        winner === "tie" ? "It's a tie!" : "Player " + winner + " wins!"

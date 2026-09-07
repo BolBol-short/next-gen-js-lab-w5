@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 5 — stopPropagation · Week 5 Lab 1</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- ============================================================
+         PROVIDED — do not edit this markup or the CSS.
+         Open with Live Server, then press F12 for the console.
+    ============================================================= -->
+    <header class="lab-header">
+        <p class="eyebrow">Week 5 · Lab 1</p>
+        <div class="exercise-pill">
+            <span class="exercise-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M8.3 2.8h7.4l5.5 5.5v7.4l-5.5 5.5H8.3l-5.5-5.5V8.3Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+                    <line x1="8.5" y1="8.5" x2="15.5" y2="15.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+                    <line x1="15.5" y1="8.5" x2="8.5" y2="15.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+                </svg>
+            </span>
+            <h1>Exercise 5<span>stopPropagation</span></h1>
+        </div>
+    </header>
+
+    <div class="event-card">
+        <p class="card-caption">The button below is nested INSIDE the outer box — a click normally bubbles up.</p>
+        <div id="ex5-outer">
+            Outer
+            <button id="ex5-inner">Inner Button</button>
+        </div>
+        <div class="log-pair">
+            <p id="ex5-outer-log" class="result-chip">outer not triggered</p>
+            <p id="ex5-inner-log" class="result-chip">inner not triggered</p>
+        </div>
+    </div>
+
+    <p class="console-hint">Your output prints to the browser console — press <kbd>F12</kbd> and open the <strong>Console</strong> tab.</p>
+
+    <!-- YOUR WORK: complete the TODOs in exercise5.js -->
+    <script src="exercise5.js"></script>
+</body>
+</html>

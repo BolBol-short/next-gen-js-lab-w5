@@ -6,18 +6,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors — SOLUTION</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Rock Paper Scissors — SOLUTION</h1>
-    <p>Instructor copy. Loads JS/script.SOLUTION.js.</p>
+    <header class="lab-header">
+        <p class="eyebrow">Week 5 · Lab 2 · Option A</p>
+        <div class="exercise-pill">
+            <span class="exercise-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                    <circle cx="6.5" cy="6.5" r="2" stroke="currentColor" stroke-width="1.5"/>
+                    <circle cx="6.5" cy="17.5" r="2" stroke="currentColor" stroke-width="1.5"/>
+                    <line x1="8" y1="7.8" x2="19" y2="19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    <line x1="8" y1="16.2" x2="19" y2="5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+            </span>
+            <h1>Rock Paper Scissors — SOLUTION<span>Event delegation</span></h1>
+        </div>
+    </header>
 
-    <div id="choices">
-        <button class="choice-btn" data-choice="rock">Rock</button>
-        <button class="choice-btn" data-choice="paper">Paper</button>
-        <button class="choice-btn" data-choice="scissors">Scissors</button>
+    <div class="game-card">
+        <div id="choices">
+            <button class="choice-btn" data-choice="rock">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 13.5 8 7.5l3-1.8 3.4.6 3.1 2.7 1.5 3.3-1 5.2H7Z" fill="#9CA3AF" stroke="#6B7280" stroke-width="1.3" stroke-linejoin="round"/><path d="M8 7.5l2 5.3M11.5 6l1 6.6M14.4 7l-.7 5.6" stroke="#6B7280" stroke-width="1.1" stroke-linecap="round"/></svg>
+                Rock
+            </button>
+            <button class="choice-btn" data-choice="paper">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="4" width="14" height="16.5" rx="1.8" fill="#EAF1FE" stroke="#2F6FED" stroke-width="1.5"/><line x1="7.8" y1="8.5" x2="16.2" y2="8.5" stroke="#2F6FED" stroke-width="1.2" stroke-linecap="round"/><line x1="7.8" y1="12" x2="16.2" y2="12" stroke="#2F6FED" stroke-width="1.2" stroke-linecap="round"/><line x1="7.8" y1="15.5" x2="13" y2="15.5" stroke="#2F6FED" stroke-width="1.2" stroke-linecap="round"/></svg>
+                Paper
+            </button>
+            <button class="choice-btn" data-choice="scissors">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="6.5" cy="6.5" r="2.3" stroke="#F59E0B" stroke-width="1.5"/><circle cx="6.5" cy="17.5" r="2.3" stroke="#F59E0B" stroke-width="1.5"/><line x1="8.3" y1="7.9" x2="20" y2="20" stroke="#F59E0B" stroke-width="1.5" stroke-linecap="round"/><line x1="8.3" y1="16.1" x2="20" y2="4" stroke="#F59E0B" stroke-width="1.5" stroke-linecap="round"/></svg>
+                Scissors
+            </button>
+        </div>
+        <p id="result">Make your move!</p>
+        <p id="score">You: 0 | Computer: 0 | Ties: 0</p>
     </div>
-    <p id="result">Make your move!</p>
-    <p id="score">You: 0 | Computer: 0 | Ties: 0</p>
 
     <script src="JS/script.SOLUTION.js"></script>
 </body>

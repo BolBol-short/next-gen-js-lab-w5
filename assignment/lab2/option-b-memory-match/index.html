@@ -7,18 +7,37 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Memory Match</h1>
-    <p>
-        Pick <strong>ONE</strong> of the three Lab 2 projects to complete.
-        This is <strong>Option B: Memory Match</strong>.
-        (Option A — Rock Paper Scissors — lives in <code>../option-a-rock-paper-scissors/</code>.
-        Option C — Tic-Tac-Toe — lives in <code>../option-c-tic-tac-toe/</code>.)
-    </p>
-    <p>Open with Live Server, then press <strong>F12</strong> for the console.</p>
+    <!-- ============================================================
+         PROVIDED — do not edit this markup or the CSS.
+         Open with Live Server, then press F12 for the console.
+    ============================================================= -->
+    <header class="lab-header">
+        <p class="eyebrow">Week 5 · Lab 2 · Option B</p>
+        <div class="exercise-pill">
+            <span class="exercise-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                    <rect x="3.5" y="3.5" width="7.5" height="7.5" rx="1.4" stroke="currentColor" stroke-width="1.6"/>
+                    <rect x="13" y="3.5" width="7.5" height="7.5" rx="1.4" stroke="currentColor" stroke-width="1.6" opacity="0.4"/>
+                    <rect x="3.5" y="13" width="7.5" height="7.5" rx="1.4" stroke="currentColor" stroke-width="1.6" opacity="0.4"/>
+                    <rect x="13" y="13" width="7.5" height="7.5" rx="1.4" stroke="currentColor" stroke-width="1.6"/>
+                </svg>
+            </span>
+            <h1>Memory Match<span>Event delegation + DOM</span></h1>
+        </div>
+    </header>
 
-    <p id="status">Find all the pairs!</p>
-    <p id="moves">Moves: 0</p>
-    <div id="board"></div>
+    <p class="how-it-works">
+        Click two cards to flip them. Matching icons stay revealed —
+        mismatches flip back on your next click.
+    </p>
+
+    <div class="game-card">
+        <div class="status-row">
+            <p id="status">Find all the pairs!</p>
+            <p id="moves">Moves: 0</p>
+        </div>
+        <div id="board"></div>
+    </div>
 
     <!-- YOUR WORK: complete the TODOs in assignment.js -->
     <script src="assignment.js"></script>

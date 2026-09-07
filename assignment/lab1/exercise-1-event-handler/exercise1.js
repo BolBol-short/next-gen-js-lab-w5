@@ -29,8 +29,11 @@
 
 
 /* ---- PROVIDED: fires the clicks so results are printed automatically
-   — do not edit ------------------------------------------------------ */
-document.getElementById("btn-inline").click();
+   — do not edit. The typeof check just avoids a scary "not defined"
+   console error before you've written Part 1 yet. ------------------- */
+if (typeof handleInlineClick === "function") {
+    document.getElementById("btn-inline").click();
+}
 document.getElementById("btn-property").click();
 
 console.log("inlineResult:", document.getElementById("inline-result").textContent);

@@ -16,7 +16,9 @@ btnProperty.onclick = function () {
     document.getElementById("property-result").textContent = "second handler ran";
 };
 
-document.getElementById("btn-inline").click();
+if (typeof handleInlineClick === "function") {
+    document.getElementById("btn-inline").click();
+}
 document.getElementById("btn-property").click();
 
 console.log("inlineResult:", document.getElementById("inline-result").textContent);
