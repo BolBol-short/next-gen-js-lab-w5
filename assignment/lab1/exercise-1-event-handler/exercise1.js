@@ -25,15 +25,20 @@
    RUN: open index.html with Live Server, press F12 for the console.
    ================================================================ */
 
+/* ---- PROVIDED: a harmless placeholder so clicking "Inline Click"
+   (by hand, or below) can't throw "not defined" before you've written
+   Part 1 — your own `function handleInlineClick() {...}` further down
+   replaces this one automatically (same-named function declarations
+   in one file — the last one written wins). Do not edit. ----------- */
+function handleInlineClick() {}
+
+
 // Write your code below.
 
 
 /* ---- PROVIDED: fires the clicks so results are printed automatically
-   — do not edit. The typeof check just avoids a scary "not defined"
-   console error before you've written Part 1 yet. ------------------- */
-if (typeof handleInlineClick === "function") {
-    document.getElementById("btn-inline").click();
-}
+   — do not edit. -------------------------------------------------- */
+document.getElementById("btn-inline").click();
 document.getElementById("btn-property").click();
 
 console.log("inlineResult:", document.getElementById("inline-result").textContent);
