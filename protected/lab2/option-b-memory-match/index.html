@@ -27,7 +27,15 @@
     <div class="game-card">
         <div class="status-row">
             <p id="status">Find all the pairs!</p>
-            <p id="moves">Moves: 0</p>
+            <div class="status-row-right">
+                <p id="moves">Moves: 0</p>
+                <button id="restart-btn" class="restart-btn" type="button" aria-label="Start a new game">
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M20 8a8 8 0 1 0 1.5 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                        <path d="M20 3v5h-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
         </div>
         <div id="board"></div>
     </div>

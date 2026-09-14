@@ -50,6 +50,22 @@ function startGame(isVsComputer) {
     document.getElementById("game-area").classList.remove("hidden");
     statusEl.textContent = "Player X's turn";
 }
+
+/* "Play Again" button: resets the board and sends you back to the
+   1P/2P mode picker. Works no matter what your Part A-E code does,
+   since it only touches PROVIDED state (boardState, cells, etc). */
+document.getElementById("restart-btn").addEventListener("click", function () {
+    for (let i = 0; i < boardState.length; i++) {
+        boardState[i] = "";
+    }
+    cells.forEach(function (cell) {
+        cell.innerHTML = "";
+    });
+    currentPlayer = "X";
+    gameOver = false;
+    document.getElementById("game-area").classList.add("hidden");
+    document.getElementById("mode-select").classList.remove("hidden");
+});
 /* ---- END PROVIDED ------------------------------------------------- */
 
 

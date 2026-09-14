@@ -36,6 +36,19 @@ function startGame(isVsComputer) {
     statusEl.textContent = "Player X's turn";
 }
 
+document.getElementById("restart-btn").addEventListener("click", function () {
+    for (let i = 0; i < boardState.length; i++) {
+        boardState[i] = "";
+    }
+    cells.forEach(function (cell) {
+        cell.innerHTML = "";
+    });
+    currentPlayer = "X";
+    gameOver = false;
+    document.getElementById("game-area").classList.add("hidden");
+    document.getElementById("mode-select").classList.remove("hidden");
+});
+
 function checkWinner(board) {
     for (let i = 0; i < WINNING_LINES.length; i++) {
         const [a, b, c] = WINNING_LINES[i];

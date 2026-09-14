@@ -157,11 +157,58 @@ body {
     background: var(--color-primary-dark);
 }
 
+.status-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 14px;
+}
+
 #status {
-    margin: 0 0 14px;
+    margin: 0;
     font-size: 13.5px;
     font-weight: 600;
     color: var(--color-neutral-700);
+}
+
+.restart-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: var(--color-neutral-100);
+    color: var(--color-neutral-700);
+    border: none;
+    padding: 6px 11px;
+    border-radius: var(--radius-full);
+    font-size: 12px;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: background var(--transition), color var(--transition);
+}
+
+.restart-btn:hover {
+    background: var(--color-primary-tint);
+    color: var(--color-primary-dark);
+}
+
+.restart-btn svg {
+    width: 13px;
+    height: 13px;
+    transition: transform 0.2s ease;
+}
+
+.restart-btn:active svg {
+    transform: rotate(-70deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .restart-btn:active svg {
+        transform: none;
+    }
 }
 
 #board {
@@ -191,6 +238,15 @@ body {
 .cell svg {
     width: 100%;
     height: 100%;
+    /* Plays automatically the instant a mark is inserted — no JS
+       trigger needed, since a newly-created element's first paint
+       already counts as the animation start. */
+    animation: markPop 0.22s ease;
+}
+
+@keyframes markPop {
+    0%   { transform: scale(0.3) rotate(-10deg); opacity: 0; }
+    100% { transform: scale(1) rotate(0deg); opacity: 1; }
 }
 
 /* The click handler checks event.target.classList directly — an
@@ -198,4 +254,10 @@ body {
    click (a second click there should be a safe no-op either way). */
 .cell * {
     pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cell svg {
+        animation: none !important;
+    }
 }

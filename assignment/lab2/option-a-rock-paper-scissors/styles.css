@@ -173,6 +173,30 @@ body {
 .choice-btn svg {
     width: 32px;
     height: 32px;
+    transition: transform 0.15s ease;
+}
+
+.choice-btn:hover svg {
+    transform: rotate(-8deg) scale(1.08);
+}
+
+.choice-btn:active svg {
+    animation: choicePop 0.25s ease;
+}
+
+@keyframes choicePop {
+    0%   { transform: scale(1); }
+    50%  { transform: scale(1.25) rotate(10deg); }
+    100% { transform: scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .choice-btn svg,
+    .choice-btn:hover svg,
+    .choice-btn:active svg {
+        animation: none !important;
+        transform: none !important;
+    }
 }
 
 #result {

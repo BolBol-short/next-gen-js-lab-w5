@@ -22,15 +22,33 @@ const CARD_ICONS = {
     6: '<svg viewBox="0 0 24 24"><path d="M12 2.5 20.5 12 12 21.5 3.5 12Z" fill="#06B6D4"/></svg>',
 };
 
-const cardValues = shuffle([1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6]);
+let cardValues = shuffle([1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6]);
 
 const boardEl = document.getElementById("board");
 const statusEl = document.getElementById("status");
 const movesEl = document.getElementById("moves");
+const restartBtn = document.getElementById("restart-btn");
 
 let flippedCards = [];
 let moves = 0;
 let matchedPairs = 0;
+
+function resetGame() {
+    cardValues = shuffle([1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6]);
+    boardEl.innerHTML = "";
+    cardValues.forEach(function (value) {
+        const card = document.createElement("div");
+        card.className = "card";
+        card.dataset.value = value;
+        boardEl.append(card);
+    });
+    flippedCards = [];
+    moves = 0;
+    matchedPairs = 0;
+    movesEl.textContent = "Moves: 0";
+    statusEl.textContent = "Find all the pairs!";
+}
+restartBtn.addEventListener("click", resetGame);
 
 /* ---- YOUR CODE (answer) — Part A ------------------------------------ */
 cardValues.forEach(function (value) {
